@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Car implements CarRequirements {
 
-    private ArrayList<String> passengers;
+    private ArrayList<Passenger> passengers;
     private int maxCapacity;
 
     public Car(int passengerCapacity){
@@ -23,7 +23,7 @@ public class Car implements CarRequirements {
     public Boolean addPassenger(Passenger p){
         int seatsRemaining = seatsRemaining();
         if (seatsRemaining > 0){
-            passengers.add(p.getName());
+            passengers.add(p);
             return true;
         }
         else{
@@ -32,8 +32,8 @@ public class Car implements CarRequirements {
     }
     @Override
     public Boolean removePassenger(Passenger p){
-        if (passengers.contains(p.getName())){
-            passengers.remove(p.getName());
+        if (passengers.contains(p)){
+            passengers.remove(p);
             return true;
         }
         else{
@@ -47,8 +47,8 @@ public class Car implements CarRequirements {
         }
         else{
             System.out.println("Passenger Manifest:");
-            for (String passenger : passengers){
-                System.out.println(passenger);
+            for (Passenger p : passengers) {
+                System.out.println(p.getName());
             }
         }
     }

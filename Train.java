@@ -1,23 +1,15 @@
 import java.util.ArrayList;
 
 public class Train implements TrainRequirements {
-    
-    ArrayList<Car> cars;
-    Engine engine;
-    FuelType fuelType;
-    double currentFuel;
-    double fuelCapacity;
-    int nCars;
-    int passengerCapacity;
+    private Engine engine;
+    private ArrayList<Car> cars;
 
     public Train(FuelType fuelType, double currentFuel, double fuelCapacity, int nCars, int passengerCapacity){
         cars = new ArrayList<>(nCars);
         engine = new Engine(fuelType, currentFuel, fuelCapacity);
-        this.fuelType = fuelType;
-        this.currentFuel = currentFuel;
-        this.fuelCapacity = fuelCapacity;
-        this.nCars = nCars;
-        this.passengerCapacity = passengerCapacity;
+        for (int i = 0; i < nCars; i++){
+            cars.add(new Car(passengerCapacity));
+        }
     }
 
     @Override
@@ -26,11 +18,18 @@ public class Train implements TrainRequirements {
     }
     @Override
     public Car getCar(int i){
-        return cars.get(i);
+        if (i >= 0 && i < cars.size()) {
+            return cars.get(i);
+        }
+        return null;
     }
     @Override
     public int getMaxCapacity(){
-        return nCars * passengerCapacity;
+        int total = 0;
+        for (Car car : cars) {
+            total += car.getCapacity();
+        }
+        return total;
     }
     @Override
     public int seatsRemaining(){
@@ -42,6 +41,7 @@ public class Train implements TrainRequirements {
     }
     @Override
     public void printManifest(){
+        System.out.println("Train Manifest:");
         for (int i = 0; i < cars.size(); i++){
             System.out.println("Car " + (i+1) + ":");
             cars.get(i).printManifest();
