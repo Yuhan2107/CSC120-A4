@@ -5,6 +5,12 @@ public class Engine implements EngineRequirements {
     private double maxFuel;
     private double currentFuel;
 
+    /*
+     * constructor of train's engine
+     * @param fuelType The type of fuel the train have
+     * @param currentFual The amount of fuel the train have recently
+     * @param fuelCapacity The maximum amount of fuel the train can hold
+     */
     public Engine(FuelType fuelType, double currentFuel, double fuelCapacity){
         this.fuelType = fuelType;
         maxFuel = fuelCapacity;
@@ -35,8 +41,7 @@ public class Engine implements EngineRequirements {
         if (currentFuel > 0){
             currentFuel -= 1;
             return true;
-        }
-        else{
+        } else{
             return false;
         }
     }

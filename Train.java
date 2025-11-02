@@ -4,6 +4,14 @@ public class Train implements TrainRequirements {
     private Engine engine;
     private ArrayList<Car> cars;
 
+    /*
+     * constructor of the train
+     * @param fuelType The type of fuel does the train contain
+     * @param currentFuel The amount of fuel the train currently have
+     * @param fuelCapacity The maximum amount of fuel the train able to hold
+     * @param nCars The number of car that the train has
+     * @param passengerCapacity The maximum number of passenger that each car can hold
+     */
     public Train(FuelType fuelType, double currentFuel, double fuelCapacity, int nCars, int passengerCapacity){
         cars = new ArrayList<>(nCars);
         engine = new Engine(fuelType, currentFuel, fuelCapacity);

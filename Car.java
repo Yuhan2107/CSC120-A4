@@ -5,6 +5,10 @@ public class Car implements CarRequirements {
     private ArrayList<Passenger> passengers;
     private int maxCapacity;
 
+    /*
+     * the constructor of the car
+     * @param passengerCapacity The maximum number of passengers that the car could contain
+     */
     public Car(int passengerCapacity){
         passengers = new ArrayList<>();
         maxCapacity = passengerCapacity;
@@ -23,10 +27,10 @@ public class Car implements CarRequirements {
     public Boolean addPassenger(Passenger p){
         int seatsRemaining = seatsRemaining();
         if (seatsRemaining > 0){
-            passengers.add(p);
+            if (!passengers.contains(p))
+                passengers.add(p);
             return true;
-        }
-        else{
+        } else{
             return false;
         }
     }
@@ -35,8 +39,7 @@ public class Car implements CarRequirements {
         if (passengers.contains(p)){
             passengers.remove(p);
             return true;
-        }
-        else{
+        } else{
             return false;
         }
     }
@@ -44,8 +47,7 @@ public class Car implements CarRequirements {
     public void printManifest(){
         if (passengers.size() == 0){
             System.out.println("This car is empty.");
-        }
-        else{
+        } else{
             System.out.println("Passenger Manifest:");
             for (Passenger p : passengers) {
                 System.out.println(p.getName());

@@ -2,6 +2,10 @@ public class Passenger implements PassengerRequirements {
     
     private String name;
 
+    /*
+     * the constructor of passenger
+     * @param name The name of the passenger
+     */
     public Passenger(String name) {
         this.name = name;
     }
