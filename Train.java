@@ -20,10 +20,20 @@ public class Train implements TrainRequirements {
         }
     }
 
+    /*
+     * accessor to the engine
+     * @return The engine's information
+     */
     @Override
     public Engine getEngine(){ 
         return engine;
     }
+
+    /*
+     * return cars' information in this train
+     * @param i The amount of cars that the train have
+     * @return The information of the cars in the train
+     */
     @Override
     public Car getCar(int i){
         if (i >= 0 && i < cars.size()) {
@@ -31,6 +41,11 @@ public class Train implements TrainRequirements {
         }
         return null;
     }
+
+    /*
+     * return the maximum capacity of the whole train by adding each car's maximum capacity individually
+     * @return The maximum capacity of the whole train
+     */
     @Override
     public int getMaxCapacity(){
         int total = 0;
@@ -39,6 +54,11 @@ public class Train implements TrainRequirements {
         }
         return total;
     }
+
+    /*
+     * return the remaining number of seats that the train has
+     * @return The remainning seats in the train
+     */
     @Override
     public int seatsRemaining(){
         int seatsRemaining = 0;
@@ -47,6 +67,10 @@ public class Train implements TrainRequirements {
         }
         return seatsRemaining;
     }
+
+    /*
+     * print out the passengers in the train
+     */
     @Override
     public void printManifest(){
         System.out.println("Train Manifest:");

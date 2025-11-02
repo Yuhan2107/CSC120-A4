@@ -14,15 +14,29 @@ public class Car implements CarRequirements {
         maxCapacity = passengerCapacity;
     }
 
+    /*
+     * accessor to the maxCapacity
+     * @return The maximum capacity of the car
+     */
     @Override
     public int getCapacity(){
         return maxCapacity;
     }
+
+    /*
+     * calculate the seats that remains in the car
+     * @return The number of seats remaining in the car
+     */
     @Override
     public int seatsRemaining(){
         return maxCapacity - passengers.size();
-
     }
+
+    /*
+     * check whether a new passenger can onboard the car. If it can, do so
+     * @param p The new passenger onboarding the car
+     * @return Whether the passenger can get on to the car
+     */
     @Override
     public Boolean addPassenger(Passenger p){
         int seatsRemaining = seatsRemaining();
@@ -34,6 +48,12 @@ public class Car implements CarRequirements {
             return false;
         }
     }
+
+    /*
+     * check whether there's a specific passenger that can get off from the car
+     * @param p The name of the passenger
+     * @return Whether the passenger is originally on the car
+     */
     @Override
     public Boolean removePassenger(Passenger p){
         if (passengers.contains(p)){
@@ -43,6 +63,10 @@ public class Car implements CarRequirements {
             return false;
         }
     }
+
+    /*
+     * print out the passengers name 
+     */
     @Override
     public void printManifest(){
         if (passengers.size() == 0){
