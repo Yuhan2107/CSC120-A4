@@ -5,7 +5,7 @@ public class Car implements CarRequirements {
     private ArrayList<Passenger> passengers;
     private int maxCapacity;
 
-    /*
+    /**
      * the constructor of the car
      * @param passengerCapacity The maximum number of passengers that the car could contain
      */
@@ -14,7 +14,7 @@ public class Car implements CarRequirements {
         maxCapacity = passengerCapacity;
     }
 
-    /*
+    /**
      * accessor to the maxCapacity
      * @return The maximum capacity of the car
      */
@@ -23,7 +23,7 @@ public class Car implements CarRequirements {
         return maxCapacity;
     }
 
-    /*
+    /**
      * calculate the seats that remains in the car
      * @return The number of seats remaining in the car
      */
@@ -32,7 +32,7 @@ public class Car implements CarRequirements {
         return maxCapacity - passengers.size();
     }
 
-    /*
+    /**
      * check whether a new passenger can onboard the car. If it can, do so
      * @param p The new passenger onboarding the car
      * @return Whether the passenger can get on to the car
@@ -49,7 +49,7 @@ public class Car implements CarRequirements {
         }
     }
 
-    /*
+    /**
      * check whether there's a specific passenger that can get off from the car
      * @param p The name of the passenger
      * @return Whether the passenger is originally on the car
@@ -64,7 +64,7 @@ public class Car implements CarRequirements {
         }
     }
 
-    /*
+    /**
      * print out the passengers name 
      */
     @Override

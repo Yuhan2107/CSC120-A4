@@ -5,7 +5,7 @@ public class Engine implements EngineRequirements {
     private double maxFuel;
     private double currentFuel;
 
-    /*
+    /**
      * constructor of train's engine
      * @param fuelType The type of fuel the train have
      * @param currentFual The amount of fuel the train have recently
@@ -17,7 +17,7 @@ public class Engine implements EngineRequirements {
         this.currentFuel = currentFuel;
     }
 
-    /*
+    /**
      * accessor to the fuel type 
      * @return the type of fuel
      */ 
@@ -26,7 +26,7 @@ public class Engine implements EngineRequirements {
         return fuelType;
     }
 
-    /*
+    /**
      * accessor to the maxFuel
      * @return The maximum amount of fuel that the engine can contain
      */
@@ -35,7 +35,7 @@ public class Engine implements EngineRequirements {
         return maxFuel;
     }
 
-    /*
+    /**
      * accessor to the currentFuel
      * @return The fuel left in the engine currently
      */
@@ -44,7 +44,7 @@ public class Engine implements EngineRequirements {
         return currentFuel;
     }
 
-    /*
+    /**
      * refuel the engine
      */
     @Override
@@ -52,7 +52,7 @@ public class Engine implements EngineRequirements {
         currentFuel = maxFuel;
     }
     
-    /*
+    /**
      * consume the fuel while the train is traveling, and return false when there's no more fuels to support traveling.
      * @return Whether the current engine can support the further traveling
      */
@@ -66,7 +66,7 @@ public class Engine implements EngineRequirements {
         }
     }
 
-    /*
+    /**
      * make up an engine to check whether the previous methods work
      */
     public static void main(String[] args){

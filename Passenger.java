@@ -2,7 +2,7 @@ public class Passenger implements PassengerRequirements {
     
     private String name;
 
-    /*
+    /**
      * the constructor of passenger
      * @param name The name of the passenger
      */
@@ -10,7 +10,7 @@ public class Passenger implements PassengerRequirements {
         this.name = name;
     }
 
-    /*
+    /**
      * accessor to passenger's name
      * @return The name of the passenger
      */
@@ -18,7 +18,7 @@ public class Passenger implements PassengerRequirements {
         return name;
     }
 
-    /*
+    /**
      * add a passenger to the car
      * @param c The car that that a new passenger is onboarding
      */
@@ -27,7 +27,7 @@ public class Passenger implements PassengerRequirements {
         c.addPassenger(this);
     }
 
-    /*
+    /**
      * remove a passenger from the car
      * @param c The car that the passenger is getting off
      */

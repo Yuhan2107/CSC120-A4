@@ -4,7 +4,7 @@ public class Train implements TrainRequirements {
     private Engine engine;
     private ArrayList<Car> cars;
 
-    /*
+    /**
      * constructor of the train
      * @param fuelType The type of fuel does the train contain
      * @param currentFuel The amount of fuel the train currently have
@@ -20,7 +20,7 @@ public class Train implements TrainRequirements {
         }
     }
 
-    /*
+    /**
      * accessor to the engine
      * @return The engine's information
      */
@@ -29,7 +29,7 @@ public class Train implements TrainRequirements {
         return engine;
     }
 
-    /*
+    /**
      * return cars' information in this train
      * @param i The amount of cars that the train have
      * @return The information of the cars in the train
@@ -42,7 +42,7 @@ public class Train implements TrainRequirements {
         return null;
     }
 
-    /*
+    /**
      * return the maximum capacity of the whole train by adding each car's maximum capacity individually
      * @return The maximum capacity of the whole train
      */
@@ -55,7 +55,7 @@ public class Train implements TrainRequirements {
         return total;
     }
 
-    /*
+    /**
      * return the remaining number of seats that the train has
      * @return The remainning seats in the train
      */
@@ -68,7 +68,7 @@ public class Train implements TrainRequirements {
         return seatsRemaining;
     }
 
-    /*
+    /**
      * print out the passengers in the train
      */
     @Override
